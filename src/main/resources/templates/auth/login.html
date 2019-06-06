@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:if="${param.error}">Неверный email или пароль!</div>
+<form th:action="@{/login/process}" method="post">
+    <div>
+        Email: <input name="email" type="email">
+    </div>
+    <div>
+        Password: <input name="password" type="password">
+    </div>
+    <!--TODO: userDetailsService-->
+    <div>
+        Запомнить меня<input type="checkbox" th:name="remember-me">
+    </div>
+    <input type="submit">
+</form>
+</body>
+</html>
